@@ -1,0 +1,29 @@
+<div class="projects-container">
+    <div class="page-header">
+      <h1>Projects</h1>
+      <p class="subtitle">Showcase of my professional and academic work</p>
+    </div>
+  
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects; let i = index">
+        <div class="project-header">
+          <div class="project-type">{{ project.type }}</div>
+          <div class="project-period">{{ project.period }}</div>
+        </div>
+        
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-description">{{ project.description }}</p>
+        
+        <div class="technologies">
+          <span class="tech-badge" *ngFor="let tech of project.technologies">{{ tech }}</span>
+        </div>
+        
+        <div class="highlights">
+          <h4>Key Highlights:</h4>
+          <ul>
+            <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

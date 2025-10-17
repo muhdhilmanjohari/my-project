@@ -1,0 +1,128 @@
+<div class="contact-container">
+  <div class="page-header">
+    <h1>Get In Touch</h1>
+    <p class="subtitle">Let's connect and discuss opportunities</p>
+  </div>
+
+  <div class="contact-content">
+    <div class="contact-info-section">
+      <h2>Contact Information</h2>
+      <p class="intro-text">
+        Feel free to reach out for collaborations, opportunities, or just a friendly chat about technology!
+      </p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-icon">📧</div>
+          <h3>Email</h3>
+          <a [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }}</a>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📱</div>
+          <h3>Phone</h3>
+          <a [href]="'tel:' + contactInfo.phone">{{ contactInfo.phone }}</a>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <h3>Location</h3>
+          <p>{{ contactInfo.location }}</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">💻</div>
+          <h3>GitHub</h3>
+          <a [href]="contactInfo.github" target="_blank" rel="noopener noreferrer">muhdhilmanjohari</a>
+        </div>
+      </div>
+
+      <div class="referees-section">
+        <h3>References</h3>
+        <div class="referee-card">
+          <h4>Lily Marlia Binti Abdul Latif</h4>
+          <p class="referee-title">Lecturer Supervisor</p>
+          <p class="referee-org">Universiti Teknologi MARA</p>
+          <div class="referee-contact">
+            <span>📞 019-5768654 / 05-406733</span>
+            <span>✉️ lilym366&#64;uitm.edu.my</span>
+          </div>
+        </div>
+
+        <div class="referee-card">
+          <h4>Brightson Jupirik</h4>
+          <p class="referee-title">Team Lead</p>
+          <p class="referee-org">Aspiro Sdn. Bhd.</p>
+          <div class="referee-contact">
+            <span>📞 013-8984507</span>
+            <span>✉️ brigthson.jupirik&#64;aspiro.co</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-section">
+      <h2>Send Me a Message</h2>
+      
+      <div class="success-message" *ngIf="submitSuccess">
+        <div class="success-icon">✓</div>
+        <p>Thank you for your message! I'll get back to you soon.</p>
+      </div>
+
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm" [class.submitted]="formSubmitted">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="formData.name"
+            required
+            placeholder="John Doe"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="formData.email"
+            required
+            placeholder="john.doe@example.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            [(ngModel)]="formData.subject"
+            required
+            placeholder="Project Inquiry"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea
+            id="message"
+            name="message"
+            [(ngModel)]="formData.message"
+            required
+            rows="6"
+            placeholder="Your message here..."
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" [disabled]="!isFormValid() || formSubmitted">
+          <span *ngIf="!formSubmitted">Send Message</span>
+          <span *ngIf="formSubmitted">Sending...</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

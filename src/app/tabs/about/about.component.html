@@ -1,0 +1,73 @@
+<div class="about-container">
+    <div class="page-header">
+      <h1>About Me</h1>
+      <p class="subtitle">Get to know more about my journey and experience</p>
+    </div>
+  
+    <section class="bio-section">
+      <div class="bio-content">
+        <h2>Professional Summary</h2>
+        <p>
+          Enthusiastic and dedicated Computer Science graduate with a concentration in Back End programming from UiTM.
+          Experienced in applying knowledge through internships and projects, with strong communication and teamwork skills.
+        </p>
+        <p>
+          Currently working as a Software Engineer, I am eager to leverage my skills and collaborate with talented teams 
+          to deliver high-quality software solutions and contribute to innovative projects. I am committed to continuous 
+          learning and growth within the field, striving towards becoming a Mid-Level Software Developer.
+        </p>
+        <div class="info-grid">
+          <div class="info-item">
+            <strong>Location:</strong> Kulim, Kedah
+          </div>
+          <div class="info-item">
+            <strong>Phone:</strong> 011-2423-2919
+          </div>
+          <div class="info-item">
+            <strong>Email:</strong> muhdhilmanjohari&#64;gmail.com
+          </div>
+          <div class="info-item">
+            <strong>GitHub:</strong> <a href="https://github.com/muhdhilmanjohari" target="_blank">muhdhilmanjohari</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="experience-section">
+      <h2>Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let exp of experiences">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="experience-header">
+              <div>
+                <h3>{{ exp.position }}</h3>
+                <h4>{{ exp.company }}</h4>
+              </div>
+              <span class="period">{{ exp.period }}</span>
+            </div>
+            <p class="location">{{ exp.location }}</p>
+            <ul class="responsibilities">
+              <li *ngFor="let resp of exp.responsibilities">{{ resp }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="education-section">
+      <h2>Education</h2>
+      <div class="education-grid">
+        <div class="education-card" *ngFor="let edu of education">
+          <div class="degree-icon">🎓</div>
+          <h3>{{ edu.degree }}</h3>
+          <h4>{{ edu.institution }}</h4>
+          <p class="location">{{ edu.location }}</p>
+          <div class="edu-footer">
+            <span class="cgpa">CGPA: {{ edu.cgpa }}</span>
+            <span class="period">{{ edu.period }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
